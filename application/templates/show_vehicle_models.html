@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Orders</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Model</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for vehicle_model in vehicle_models %}
+    <tr>
+        <th scope="row">{{ vehicle_model.id }}</th>
+        <td>{{ vehicle_model.brand }}</td>
+        <td>{{ vehicle_model.model }}</td>
+        <td><a href="{% url 'update_vehicle_model' vehicle_model.id %}">Edit</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

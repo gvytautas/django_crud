@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Orders</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">WIN</th>
+        <th scope="col">Brand</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for order in orders %}
+    <tr>
+        <th scope="row">{{ order.id }}</th>
+        <td>{{ order.total_price }}</td>
+        <td>{{ order.vehicle.win_number }}</td>
+        <td>{{ order.vehicle.model.brand }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
